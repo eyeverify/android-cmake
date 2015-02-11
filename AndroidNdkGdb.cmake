@@ -59,13 +59,13 @@ macro(android_ndk_gdb_enable)
         file(MAKE_DIRECTORY ${NDK_GDB_SOLIB_PATH})
         
         # 1. generate essential Android Makefiles
-        file(MAKE_DIRECTORY ${ANDROID_PROJECT_DIR}/jni)
-        if(NOT EXISTS ${ANDROID_PROJECT_DIR}/jni/Android.mk)
-            file(WRITE ${ANDROID_PROJECT_DIR}/jni/Android.mk "APP_ABI := ${ANDROID_NDK_ABI_NAME}\n")
-        endif()
-        if(NOT EXISTS ${ANDROID_PROJECT_DIR}/jni/Application.mk)
-            file(WRITE ${ANDROID_PROJECT_DIR}/jni/Application.mk "APP_ABI := ${ANDROID_NDK_ABI_NAME}\n")
-        endif()
+        # file(MAKE_DIRECTORY ${ANDROID_PROJECT_DIR}/jni)
+        # if(NOT EXISTS ${ANDROID_PROJECT_DIR}/jni/Android.mk)
+        #     file(WRITE ${ANDROID_PROJECT_DIR}/jni/Android.mk "APP_ABI := ${ANDROID_NDK_ABI_NAME}\n")
+        # endif()
+        # if(NOT EXISTS ${ANDROID_PROJECT_DIR}/jni/Application.mk)
+        #     file(WRITE ${ANDROID_PROJECT_DIR}/jni/Application.mk "APP_ABI := ${ANDROID_NDK_ABI_NAME}\n")
+        # endif()
     
         # 2. generate gdb.setup
         get_directory_property(PROJECT_INCLUDES DIRECTORY ${PROJECT_SOURCE_DIR} INCLUDE_DIRECTORIES)
