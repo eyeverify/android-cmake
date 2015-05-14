@@ -47,7 +47,7 @@
 macro(android_ndk_gdb_enable)
     if(ANDROID)
         if(NOT ANDROID_NDK)
-            ANDROID_NDK=${ANDROID_STANDALONE_TOOLCHAIN}
+            set(ANDROID_NDK "${ANDROID_STANDALONE_TOOLCHAIN}")
         endif()
 
         # create custom target that depends on the real target so it gets executed afterwards
@@ -87,7 +87,7 @@ endmacro()
 macro(android_ndk_gdb_debuggable TARGET_NAME)
     if(ANDROID)
         if(NOT ANDROID_NDK)
-            ANDROID_NDK=${ANDROID_STANDALONE_TOOLCHAIN}
+            set(ANDROID_NDK "${ANDROID_STANDALONE_TOOLCHAIN}")
         endif()
         get_property(TARGET_LOCATION TARGET ${TARGET_NAME} PROPERTY LOCATION)
 
